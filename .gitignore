@@ -50,7 +50,6 @@ Thumbs.db
 .nextflow.*
 .command*
 nextflow_report*
-nextflow.config
 
 # temporary directories #
 **/tmp/
