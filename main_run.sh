@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 DATE=$(date +%F)
-NFX_CONFIG=~/nextflow.singularity.config
+NFX_CONFIG=./nextflow.singularity.config
 
 # Load the modules
 ml nextflow/20.09.0-edge
