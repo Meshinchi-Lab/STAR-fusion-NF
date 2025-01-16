@@ -6,8 +6,6 @@ nextflow.enable.dsl=2
 // Run fastQC to check each input fastq for quality metrics
 process fastqc {
 
-    conda 
-
     input:
     tuple val(Sample), file(R1), file(R2)
 
