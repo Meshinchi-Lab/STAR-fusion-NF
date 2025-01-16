@@ -8,6 +8,9 @@ echo ""
 # Run the STAR Fusion Command
 echo "Running STAR Fusion"
 
+# Load STAR-Fusion Module
+ml STAR-Fusion/1.12.0-foss-2022b
+
 STAR-Fusion --genome_lib_dir \$PWD/$genome_lib \
 	  	--chimeric_junction "${Sample}Chimeric.out.junction" \
 		--left_fq $R1 \
