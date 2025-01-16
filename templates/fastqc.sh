@@ -16,6 +16,7 @@ fastqc \
     -o fastqc_${Sample}_logs \
     -t 6 \
     -f fastq \
-    -q $R1 $R2
+    -q \
+    $R1 $R2
 
 echo "FASTQC Complete for $Sample"
