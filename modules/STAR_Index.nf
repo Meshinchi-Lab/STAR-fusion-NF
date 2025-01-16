@@ -1,4 +1,7 @@
+#!/usr/bin/env nextflow
 
+// Using DSL-2
+nextflow.enable.dsl=2
 
 //Build GRCh37-lite index for CICERO 
 process STAR_index {
@@ -13,3 +16,7 @@ process STAR_index {
 	output:
 	path "*/GenomeDir"
 	path "Log.out"
+
+	script;
+	template 'STAR_Index.sh'
+}
