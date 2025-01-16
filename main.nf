@@ -18,7 +18,7 @@ def helpMessage() {
 
 Usage:
 
-nextflow run STAR-fusion-NF <ARGUMENTS> OR
+nextflow run Meshinchi-Lab/STAR-fusion-NF <ARGUMENTS> OR
 
 sbatch run_main.sh
 
@@ -47,9 +47,11 @@ include { STAR_Fusion } from './modules/STAR_Fusion'
 // Main Workflow
 workflow {
 
-         // 
-
-         //
+         // Run FASTQC on the Read_1, Read_2 Sample pairs
+         fastqc(fqs_ch)
+         
+         // Run MULTIQC on the Read_1, Read_2 Sample pairs
+         multiqc(fqs_ch)
 
          //
 
