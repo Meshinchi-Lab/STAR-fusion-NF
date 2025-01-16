@@ -16,3 +16,47 @@ log.info """\
 def helpMessage() {
     log.info"""
 
+Usage:
+
+nextflow run STAR-fusion-NF <ARGUMENTS> OR
+
+sbatch run_main.sh
+
+Required Arguments:
+
+Input Data:
+
+Reference Data:
+
+Output Data:
+
+Optional Arguments:
+
+""".stripIndent()
+}
+
+// Import Sub-workflows
+include { fastqc } from './modules/fastqc'
+include { multiqc } from './multiqc'
+include { STAR_Index } from './STAR_Index'
+include { STAR_Align } from './modules/STAR_Align'
+include { STAR_Fusion } from './modules/STAR_Fusion'
+
+// Channel Definition
+
+// Main Workflow
+workflow {
+
+         // 
+
+         //
+
+         //
+
+         //
+
+         //
+
+}
+
+
