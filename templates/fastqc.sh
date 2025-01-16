@@ -17,6 +17,4 @@ fastqc -o fastqc_${Sample}_logs \
     -f fastq \
     -q $R1 $R2
 
-#rm $R1 $R2 to avoid repetitive upload to the S3 bucket
-
 echo "FASTQC Complete for $Sample"
