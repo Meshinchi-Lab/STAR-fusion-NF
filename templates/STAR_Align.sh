@@ -8,6 +8,9 @@ echo ""
 # Run the cluster command
 echo "Running STAR Align"
 
+# Module Load
+ml STAR/2.7.11b-GCC-13.2.0
+
 STAR --runMode alignReads \
     	--genomeDir \$PWD/$genome_lib/ref_genome.fa.star.idx \
 		--runThreadN 8 \
