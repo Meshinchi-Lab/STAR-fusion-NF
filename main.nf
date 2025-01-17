@@ -70,8 +70,6 @@ workflow {
                  gunzip_fasta(fasta)
                  gunzip_fasta.out.unzipped_file.set{fasta}
          } 
-
-         // 
          
          //Call STAR genomeGenerate to build the index
          STAR_index(fasta, gtf)
