@@ -23,14 +23,20 @@ nextflow run Meshinchi-Lab/STAR-fusion-NF <ARGUMENTS> OR
 sbatch run_main.sh
 
 Required Arguments:
+         --sample_sheet        Single file with the location of the input data. Format is a CSV with columns: Sample, R1, R2
 
 Input Data:
 
 Reference Data:
+         --star_genome_lib     The location of the CTAT Resource Library for STAR-Fusion - See https://data.broadinstitute.org/Trinity/CTAT_RESOURCE_LIB/ for available ones
+         --fasta_file          Location of directory which contains the reference genome fasta file (single file) for the optional STAR fusion index step
+         --gtf_url             URL of the gtf file for the optional STAR index step - for example on gencode FTP "ftp.ebi.ac.uk/pub/databases/gencode/"
 
-Output Data:
-
-Optional Arguments:
+Output Locations:
+         --STAR_Fusion_out
+         --multiQC_out
+         --star_index_out
+         --STAR_aligner_out
 
 """.stripIndent()
 }
@@ -51,7 +57,6 @@ workflow {
          fastqc(fqs_ch)
          
          // Run MULTIQC on the Read_1, Read_2 Sample pairs
-         multiqc(fqs_ch)
 
          //
 
