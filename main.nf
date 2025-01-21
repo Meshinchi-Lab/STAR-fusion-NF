@@ -56,12 +56,12 @@ workflow {
          Channel.fromPath(params.gtf_url)
                   .ifEmpty { error  "No file found at URL ${params.gtf_url}" }
                   .set{gtf}    
-         //if gtf is gzipped, it must be decompressed   
+         // if gtf is gzipped, it must be decompressed   
          if(params.gtf_url.endsWith(".gz")){
                  gunzip_gtf(gtf)
                  gunzip_gtf.out.unzipped_file.set{gtf}
          } 
-         //Stage the genome fasta files for the index building step
+         // Stage the genome fasta files for the index building step
          Channel.fromPath(params.fasta_file)
                  .ifEmpty { error "No files found matching the pattern ${params.fasta_file}." }
                  .set{fasta}
@@ -71,17 +71,14 @@ workflow {
                  gunzip_fasta.out.unzipped_file.set{fasta}
          } 
          
-         //Call STAR genomeGenerate to build the index
+         // Call STAR genomeGenerate to build the index
          STAR_index(fasta, gtf)
 
-         // Run FASTQC on the Read_1, Read_2 Sample pairs
-         fastqc(fqs_ch)
+         // Map the reads using STAR
          
-         // Run MULTIQC on the Read_1, Read_2 Sample pairs
 
-         //
-
-         //
+         // Call Fusions with STAR Fusion
+         
 
          //
 
