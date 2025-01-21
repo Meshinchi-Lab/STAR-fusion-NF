@@ -3,7 +3,7 @@
 // Using DSL-2
 nextflow.enable.dsl=2
 
-//Build GRCh37-lite index for CICERO 
+//Build Index
 process STAR_index {
 	publishDir "$params.star_index_out"
 
